@@ -17,6 +17,10 @@ module.exports = {
       spacing: {
         180: "32rem",
       },
+      backgroundImage: {
+        "cta-mobile": "url('../images/bg-boost-mobile.svg')",
+        "cta-desktop": "url('../images/bg-boost-desktop.svg')",
+      },
     },
   },
   plugins: [],
