@@ -135,9 +135,9 @@
             <div
               class="flex flex-col justify-center items-center space-y-2 md:flex-row md:space-y-0 md:space-x-5"
             >
-              <div class="font-bold text-cyan">https://rel.ink/k4IKyk</div>
+              <div id="target1" class="font-bold text-cyan">https://rel.ink/k4IKyk</div>
               <button
-                class="px-8 py-2 bg-cyan text-white rounded-lg w-fit hover:bg-cyanLight"
+                class="btn px-8 py-2 bg-cyan text-white rounded-lg w-fit hover:bg-cyanLight" data-clipboard-target="#target1"
               >
                 Copy
               </button>
@@ -155,9 +155,9 @@
             <div
               class="flex flex-col justify-center items-center space-y-2 md:flex-row md:space-y-0 md:space-x-5"
             >
-              <div class="font-bold text-cyan">https://rel.ink/gxOXp9</div>
+              <div id="target2" class="font-bold text-cyan">https://rel.ink/gxOXp9</div>
               <button
-                class="px-8 py-2 bg-veryDarkViolet text-white rounded-lg w-fit hover:opacity-70"
+                class="btn px-8 py-2 bg-veryDarkViolet text-white rounded-lg w-fit hover:opacity-70" data-clipboard-target="#target2"
               >
                 Copy
               </button>
@@ -175,9 +175,9 @@
             <div
               class="flex flex-col justify-center items-center space-y-2 md:flex-row md:space-y-0 md:space-x-5"
             >
-              <div class="font-bold text-cyan">https://rel.ink/gob3X9</div>
+              <div id="target3" class="font-bold text-cyan">https://rel.ink/gob3X9</div>
               <button
-                class="px-8 py-2 bg-cyan text-white rounded-lg w-fit hover:bg-cyanLight"
+                class="btn px-8 py-2 bg-cyan text-white rounded-lg w-fit hover:bg-cyanLight" data-clipboard-target="#target3"
               >
                 Copy
               </button>
@@ -369,5 +369,25 @@
 
     </footer>
     <script src="js/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+
+    <script>
+      const btns = document.querySelectorAll(".btn");
+      const clipboard = new ClipboardJS(btns);
+
+      clipboard.on("success", (e) => {
+        console.info("Action:", e.action);
+        console.info("Text:", e.text);
+        console.info("Trigger:", e.trigger);
+      });
+
+      clipboard.on("error", function (e) {
+        console.info("Action:", e.action);
+        console.info("Text:", e.text);
+        console.info("Trigger:", e.trigger);
+      });
+
+    </script>
   </body>
 </html>
